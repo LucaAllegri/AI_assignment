@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.example.com/bricklaying-robot-ontology"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.example.com/bricklaying-robot-ontology">
+    <Prefix name="" IRI="http://www.semanticweb.org/lucaa/ontologies/2026/0/untitled-ontology-14/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BastardMortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Brick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BrickCourse"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BrickGripper"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BurntClayBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CementMortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConcreteBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FacingBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FireBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FixedBaseRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LimeMortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileManipulator"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MortarGun"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PerforatedBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalObject"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlasterBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RailRobot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RailTrack"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RefractoryMortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Robot"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SandLimeBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Trowel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Wall"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#builtBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containsBrick"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesMortar"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#usesTool"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#height"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#length"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wallHeight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wallLength"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#wallThickness"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#weight"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#width"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BastardMortar"/>
+        <Class IRI="#Mortar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Brick"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrickCourse"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrickCourse"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#containsBrick"/>
+            <Class IRI="#Brick"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrickGripper"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BurntClayBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CementMortar"/>
+        <Class IRI="#Mortar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConcreteBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FacingBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FireBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FixedBaseRobot"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LimeMortar"/>
+        <Class IRI="#Mortar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileManipulator"/>
+        <Class IRI="#MobileRobot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileRobot"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mortar"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MortarGun"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PerforatedBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlasterBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RailRobot"/>
+        <Class IRI="#Robot"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RailTrack"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RefractoryMortar"/>
+        <Class IRI="#Mortar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Robot"/>
+        <Class IRI="#Agent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SandLimeBrick"/>
+        <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tool"/>
+        <Class IRI="#PhysicalObject"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Trowel"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#BrickCourse"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#usesMortar"/>
+            <Class IRI="#Mortar"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#builtBy"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#containsBrick"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesMortar"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#usesTool"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#builtBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#builtBy"/>
+            <Class IRI="#Wall"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsBrick"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#containsBrick"/>
+            <Class IRI="#BrickCourse"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Structure"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesMortar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#usesMortar"/>
+            <Class IRI="#Wall"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#usesTool"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#usesTool"/>
+            <Class IRI="#Robot"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#builtBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#builtBy"/>
+            <Class IRI="#Robot"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsBrick"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#containsBrick"/>
+            <Class IRI="#Brick"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasPart"/>
+            <Class IRI="#Structure"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#usesMortar"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#usesMortar"/>
+            <Class IRI="#Mortar"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#height"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#length"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#wallHeight"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#wallLength"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#wallThickness"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#weight"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#width"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#height"/>
+        <Class IRI="#Brick"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#length"/>
+        <Class IRI="#Brick"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wallLength"/>
+        <Class IRI="#Wall"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#wallThickness"/>
+        <Class IRI="#Wall"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#weight"/>
+        <Class IRI="#Brick"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#width"/>
+        <Class IRI="#Brick"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#height"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#length"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wallLength"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#wallThickness"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#weight"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#width"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
