@@ -19,6 +19,9 @@
         <Class IRI="#BastardMortar"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BedJoint"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Brick"/>
     </Declaration>
     <Declaration>
@@ -34,6 +37,12 @@
         <Class IRI="#BurntClayBrick"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CavityWall"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#CementMortar"/>
     </Declaration>
     <Declaration>
@@ -46,10 +55,28 @@
         <Class IRI="#FireBrick"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FireWall"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FixedBaseRobot"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ForceSensor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeadJoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Joint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lidar"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#LimeMortar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LoadBearingWall"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MobileManipulator"/>
@@ -64,6 +91,9 @@
         <Class IRI="#MortarGun"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PartitionWall"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#PerforatedBrick"/>
     </Declaration>
     <Declaration>
@@ -71,6 +101,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#PlasterBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rail"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RailRobot"/>
@@ -86,6 +119,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#SandLimeBrick"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Structure"/>
@@ -140,6 +176,10 @@
         <Class IRI="#Mortar"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BedJoint"/>
+        <Class IRI="#Joint"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Brick"/>
         <Class IRI="#PhysicalObject"/>
     </SubClassOf>
@@ -167,6 +207,14 @@
         <Class IRI="#Brick"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CavityWall"/>
+        <Class IRI="#Wall"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#CementMortar"/>
         <Class IRI="#Mortar"/>
     </SubClassOf>
@@ -183,12 +231,36 @@
         <Class IRI="#Brick"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FireWall"/>
+        <Class IRI="#Wall"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FixedBaseRobot"/>
         <Class IRI="#Robot"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ForceSensor"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeadJoint"/>
+        <Class IRI="#Joint"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Joint"/>
+        <Class IRI="#Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Lidar"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#LimeMortar"/>
         <Class IRI="#Mortar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LoadBearingWall"/>
+        <Class IRI="#Wall"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MobileManipulator"/>
@@ -207,12 +279,20 @@
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#PartitionWall"/>
+        <Class IRI="#Wall"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#PerforatedBrick"/>
         <Class IRI="#Brick"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PlasterBrick"/>
         <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rail"/>
+        <Class IRI="#PhysicalObject"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RailRobot"/>
@@ -233,6 +313,10 @@
     <SubClassOf>
         <Class IRI="#SandLimeBrick"/>
         <Class IRI="#Brick"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#PhysicalObject"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Tool"/>
@@ -260,6 +344,29 @@
             <Class IRI="#Mortar"/>
         </ObjectExactCardinality>
     </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Agent"/>
+        <Class IRI="#PhysicalObject"/>
+        <Class IRI="#Structure"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Brick"/>
+        <Class IRI="#Mortar"/>
+        <Class IRI="#Rail"/>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Tool"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BrickCourse"/>
+        <Class IRI="#Joint"/>
+        <Class IRI="#RailTrack"/>
+        <Class IRI="#Wall"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#FixedBaseRobot"/>
+        <Class IRI="#MobileRobot"/>
+        <Class IRI="#RailRobot"/>
+    </DisjointClasses>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#builtBy"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
