@@ -28,6 +28,9 @@
         <Class IRI="#BrickGripper"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BrickHammer"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#BurntClayBrick"/>
     </Declaration>
     <Declaration>
@@ -153,6 +156,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BrickGripper"/>
+        <Class IRI="#Tool"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BrickHammer"/>
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
@@ -350,7 +357,7 @@
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#wallLength"/>
-        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+        <DataProperty IRI="#wallThickness"/>
     </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#wallThickness"/>
