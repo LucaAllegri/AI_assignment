@@ -19,13 +19,7 @@
         <Class IRI="#BastardMortar"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BedJoint"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Brick"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#BrickCourse"/>
     </Declaration>
     <Declaration>
         <Class IRI="#BrickGripper"/>
@@ -49,6 +43,9 @@
         <Class IRI="#ConcreteBrick"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Equipment"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#FacingBrick"/>
     </Declaration>
     <Declaration>
@@ -64,12 +61,6 @@
         <Class IRI="#ForceSensor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#HeadJoint"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Joint"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Lidar"/>
     </Declaration>
     <Declaration>
@@ -79,7 +70,7 @@
         <Class IRI="#LoadBearingWall"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MobileManipulator"/>
+        <Class IRI="#Material"/>
     </Declaration>
     <Declaration>
         <Class IRI="#MobileRobot"/>
@@ -97,13 +88,7 @@
         <Class IRI="#PerforatedBrick"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PhysicalObject"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#PlasterBrick"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Rail"/>
     </Declaration>
     <Declaration>
         <Class IRI="#RailRobot"/>
@@ -136,7 +121,13 @@
         <Class IRI="#Wall"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#brickPartOf"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#buildsWall"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#composedBy"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#detectsObject"/>
@@ -145,7 +136,22 @@
         <ObjectProperty IRI="#hasBrick"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isAttachedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isBuiltBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isDetectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isEndowedWith"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mortarPartOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#movesOn"/>
@@ -153,52 +159,20 @@
     <Declaration>
         <ObjectProperty IRI="#usesMortar"/>
     </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#usesTool"/>
-    </Declaration>
     <SubClassOf>
         <Class IRI="#BastardMortar"/>
         <Class IRI="#Mortar"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#BedJoint"/>
-        <Class IRI="#Joint"/>
+        <Class IRI="#Brick"/>
+        <Class IRI="#Material"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Brick"/>
-        <Class IRI="#PhysicalObject"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Brick"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isPartOf"/>
-            <Class IRI="#BrickCourse"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Brick"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#isPartOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#brickPartOf"/>
             <Class IRI="#Wall"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BrickCourse"/>
-        <Class IRI="#Structure"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BrickCourse"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasBrick"/>
-            <Class IRI="#Brick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BrickCourse"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#isPartOf"/>
-            <Class IRI="#Wall"/>
-        </ObjectExactCardinality>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BrickGripper"/>
@@ -229,6 +203,13 @@
         <Class IRI="#Brick"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Equipment"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#isAttachedTo"/>
+            <Class IRI="#Robot"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FacingBrick"/>
         <Class IRI="#Brick"/>
     </SubClassOf>
@@ -249,14 +230,6 @@
         <Class IRI="#Sensor"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#HeadJoint"/>
-        <Class IRI="#Joint"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Joint"/>
-        <Class IRI="#Structure"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Lidar"/>
         <Class IRI="#Sensor"/>
     </SubClassOf>
@@ -269,25 +242,19 @@
         <Class IRI="#Wall"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MobileManipulator"/>
-        <Class IRI="#MobileRobot"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#MobileRobot"/>
         <Class IRI="#Robot"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MobileRobot"/>
-        <ObjectComplementOf>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#movesOn"/>
-                <Class IRI="#RailTrack"/>
-            </ObjectSomeValuesFrom>
-        </ObjectComplementOf>
+        <Class IRI="#Mortar"/>
+        <Class IRI="#Material"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Mortar"/>
-        <Class IRI="#PhysicalObject"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#mortarPartOf"/>
+            <Class IRI="#Wall"/>
+        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#MortarGun"/>
@@ -313,19 +280,8 @@
         <Class IRI="#Brick"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Rail"/>
-        <Class IRI="#PhysicalObject"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#RailRobot"/>
         <Class IRI="#Robot"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RailRobot"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#movesOn"/>
-            <Class IRI="#RailTrack"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#RailRobot"/>
@@ -356,8 +312,8 @@
     <SubClassOf>
         <Class IRI="#Robot"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#usesTool"/>
-            <Class IRI="#Tool"/>
+            <ObjectProperty IRI="#isEndowedWith"/>
+            <Class IRI="#Equipment"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -366,18 +322,18 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sensor"/>
-        <Class IRI="#PhysicalObject"/>
+        <Class IRI="#Equipment"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Sensor"/>
         <ObjectSomeValuesFrom>
             <ObjectProperty IRI="#detectsObject"/>
-            <Class IRI="#PhysicalObject"/>
+            <Class IRI="#Material"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Tool"/>
-        <Class IRI="#PhysicalObject"/>
+        <Class IRI="#Equipment"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Trowel"/>
@@ -390,7 +346,7 @@
     <SubClassOf>
         <Class IRI="#Wall"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#hasBrick"/>
+            <ObjectProperty IRI="#composedBy"/>
             <Class IRI="#Brick"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
@@ -401,9 +357,24 @@
             <Class IRI="#Structure"/>
         </ObjectAllValuesFrom>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#isBuiltBy"/>
+            <Class IRI="#Robot"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Wall"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#composedBy"/>
+            <Class IRI="#Mortar"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#Agent"/>
-        <Class IRI="#PhysicalObject"/>
+        <Class IRI="#Equipment"/>
+        <Class IRI="#Material"/>
         <Class IRI="#Structure"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -415,15 +386,6 @@
     <DisjointClasses>
         <Class IRI="#Brick"/>
         <Class IRI="#Mortar"/>
-        <Class IRI="#Rail"/>
-        <Class IRI="#Sensor"/>
-        <Class IRI="#Tool"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BrickCourse"/>
-        <Class IRI="#Joint"/>
-        <Class IRI="#RailTrack"/>
-        <Class IRI="#Wall"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#BrickGripper"/>
@@ -456,14 +418,57 @@
         <Class IRI="#MobileRobot"/>
         <Class IRI="#RailRobot"/>
     </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RailTrack"/>
+        <Class IRI="#Wall"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Sensor"/>
+        <Class IRI="#Tool"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#brickPartOf"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#mortarPartOf"/>
+        <ObjectProperty IRI="#isPartOf"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#buildsWall"/>
+        <ObjectProperty IRI="#isBuiltBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#detectsObject"/>
+        <ObjectProperty IRI="#isDetectedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isAttachedTo"/>
+        <ObjectProperty IRI="#isEndowedWith"/>
+    </InverseObjectProperties>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#composedBy"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#detectsObject"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#hasBrick"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isAttachedTo"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isBuiltBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isDetectedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#isEndowedWith"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isPartOf"/>
@@ -474,17 +479,29 @@
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#usesMortar"/>
     </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#usesTool"/>
-    </AsymmetricObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#composedBy"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#detectsObject"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#hasBrick"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isAttachedTo"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isBuiltBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isDetectedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#isEndowedWith"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isPartOf"/>
@@ -495,9 +512,82 @@
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#usesMortar"/>
     </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#usesTool"/>
-    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#brickPartOf"/>
+        <Class IRI="#Brick"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#buildsWall"/>
+        <Class IRI="#Robot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#composedBy"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#detectsObject"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isBuiltBy"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isDetectedBy"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isEndowedWith"/>
+        <Class IRI="#Robot"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mortarPartOf"/>
+        <Class IRI="#Mortar"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#brickPartOf"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#buildsWall"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#composedBy"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#detectsObject"/>
+        <Class IRI="#Material"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isBuiltBy"/>
+        <Class IRI="#Robot"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isDetectedBy"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEndowedWith"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isEndowedWith"/>
+        <Class IRI="#Tool"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPartOf"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mortarPartOf"/>
+        <Class IRI="#Wall"/>
+    </ObjectPropertyRange>
 </Ontology>
 
 
