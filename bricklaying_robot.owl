@@ -13,9 +13,6 @@
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="#Agent"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#BastardMortar"/>
     </Declaration>
     <Declaration>
@@ -137,9 +134,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#detectsObject"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasBrick"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isAttachedTo"/>
@@ -281,12 +275,15 @@
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#RefractoryMortar"/>
-        <Class IRI="#Mortar"/>
+        <Class IRI="#RailTrack"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#isAttachedTo"/>
+            <Class IRI="#RailRobot"/>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Robot"/>
-        <Class IRI="#Agent"/>
+        <Class IRI="#RefractoryMortar"/>
+        <Class IRI="#Mortar"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Robot"/>
@@ -338,13 +335,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Wall"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="#isPartOf"/>
-            <Class IRI="#Structure"/>
-        </ObjectAllValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wall"/>
         <ObjectMinCardinality cardinality="1">
             <ObjectProperty IRI="#isBuiltBy"/>
             <Class IRI="#Robot"/>
@@ -357,12 +347,6 @@
             <Class IRI="#Mortar"/>
         </ObjectExactCardinality>
     </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#Agent"/>
-        <Class IRI="#Equipment"/>
-        <Class IRI="#Material"/>
-        <Class IRI="#Structure"/>
-    </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#BastardMortar"/>
         <Class IRI="#CementMortar"/>
@@ -377,6 +361,7 @@
         <Class IRI="#BrickGripper"/>
         <Class IRI="#BrickHammer"/>
         <Class IRI="#MortarGun"/>
+        <Class IRI="#RailTrack"/>
         <Class IRI="#Trowel"/>
     </DisjointClasses>
     <DisjointClasses>
@@ -398,6 +383,12 @@
         <Class IRI="#FireWall"/>
         <Class IRI="#LoadBearingWall"/>
         <Class IRI="#PartitionWall"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Equipment"/>
+        <Class IRI="#Material"/>
+        <Class IRI="#Robot"/>
+        <Class IRI="#Structure"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#FixedBaseRobot"/>
@@ -445,6 +436,15 @@
         <ObjectProperty IRI="#isEndowedWith"/>
     </InverseObjectProperties>
     <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#BrickComposedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#MortarComposedBy"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#brickPartOf"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
@@ -452,9 +452,6 @@
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#detectsObject"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#hasBrick"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isAttachedTo"/>
@@ -471,6 +468,18 @@
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#isPartOf"/>
     </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#mortarPartOf"/>
+    </AsymmetricObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#BrickComposedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#MortarComposedBy"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#brickPartOf"/>
+    </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
     </IrreflexiveObjectProperty>
@@ -479,9 +488,6 @@
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#detectsObject"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#hasBrick"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isAttachedTo"/>
@@ -497,6 +503,9 @@
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#isPartOf"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#mortarPartOf"/>
     </IrreflexiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#BrickComposedBy"/>
