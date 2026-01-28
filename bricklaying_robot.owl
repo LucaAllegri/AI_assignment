@@ -22,9 +22,6 @@
         <Class IRI="#BrickGripper"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#BrickHammer"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#BurntClayBrick"/>
     </Declaration>
     <Declaration>
@@ -235,10 +232,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BrickGripper"/>
-        <Class IRI="#Tool"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#BrickHammer"/>
         <Class IRI="#Tool"/>
     </SubClassOf>
     <SubClassOf>
@@ -726,13 +719,6 @@
     <DisjointClasses>
         <Class IRI="#Brick"/>
         <Class IRI="#Mortar"/>
-    </DisjointClasses>
-    <DisjointClasses>
-        <Class IRI="#BrickGripper"/>
-        <Class IRI="#BrickHammer"/>
-        <Class IRI="#MortarGun"/>
-        <Class IRI="#RailTrack"/>
-        <Class IRI="#Trowel"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#BurntClayBrick"/>
