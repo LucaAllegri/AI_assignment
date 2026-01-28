@@ -616,10 +616,6 @@
         <ObjectProperty IRI="#isBuiltBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#compatibleWith"/>
-        <ObjectProperty IRI="#requiresMortar"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
         <ObjectProperty IRI="#composedBy"/>
         <ObjectProperty IRI="#isPartOf"/>
     </InverseObjectProperties>
