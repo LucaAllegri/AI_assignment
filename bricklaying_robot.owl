@@ -28,9 +28,6 @@
         <Class IRI="#Camera"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#CavityInsulatedWall"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#CavityWall"/>
     </Declaration>
     <Declaration>
@@ -118,15 +115,6 @@
         <Class IRI="#Wall"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#brickPartOf"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#buildsWall"/>
     </Declaration>
     <Declaration>
@@ -152,9 +140,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isPartOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#mortarPartOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#requiresMortar"/>
@@ -219,16 +204,16 @@
     <SubClassOf>
         <Class IRI="#Brick"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#brickPartOf"/>
-            <Class IRI="#Wall"/>
+            <ObjectProperty IRI="#requiresMortar"/>
+            <Class IRI="#Mortar"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Brick"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#requiresMortar"/>
-            <Class IRI="#Mortar"/>
-        </ObjectExactCardinality>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#isPartOf"/>
+            <Class IRI="#Wall"/>
+        </ObjectMaxCardinality>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#BrickGripper"/>
@@ -264,75 +249,8 @@
         <Class IRI="#Sensor"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#CavityInsulatedWall"/>
-        <Class IRI="#Wall"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityInsulatedWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#ConcreteBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityInsulatedWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#FacingBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityInsulatedWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#PerforatedBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityInsulatedWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#SandLimeBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#CavityWall"/>
         <Class IRI="#Wall"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#BurntClayBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#ConcreteBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#FacingBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#PerforatedBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#CavityWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#SandLimeBrick"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CementMortar"/>
@@ -439,13 +357,6 @@
         <Class IRI="#Wall"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#FireWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#FireBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#FixedBaseRobot"/>
         <Class IRI="#Robot"/>
     </SubClassOf>
@@ -501,27 +412,6 @@
         <Class IRI="#Wall"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LoadBearingWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#BurntClayBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LoadBearingWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#ConcreteBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#LoadBearingWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#SandLimeBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#MobileRobot"/>
         <Class IRI="#Robot"/>
     </SubClassOf>
@@ -532,8 +422,8 @@
     <SubClassOf>
         <Class IRI="#Mortar"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#mortarPartOf"/>
-            <Class IRI="#Wall"/>
+            <ObjectProperty IRI="#compatibleWith"/>
+            <Class IRI="#Brick"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
@@ -543,27 +433,6 @@
     <SubClassOf>
         <Class IRI="#PartitionWall"/>
         <Class IRI="#Wall"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PartitionWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#PerforatedBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PartitionWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#PlasterBrick"/>
-        </ObjectSomeValuesFrom>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PartitionWall"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#BrickComposedBy"/>
-            <Class IRI="#SandLimeBrick"/>
-        </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PerforatedBrick"/>
@@ -703,13 +572,6 @@
             <Class IRI="#Robot"/>
         </ObjectMinCardinality>
     </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Wall"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#composedBy"/>
-            <Class IRI="#Mortar"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
     <DisjointClasses>
         <Class IRI="#BastardMortar"/>
         <Class IRI="#CementMortar"/>
@@ -735,13 +597,6 @@
         <Class IRI="#Lidar"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#CavityInsulatedWall"/>
-        <Class IRI="#CavityWall"/>
-        <Class IRI="#FireWall"/>
-        <Class IRI="#LoadBearingWall"/>
-        <Class IRI="#PartitionWall"/>
-    </DisjointClasses>
-    <DisjointClasses>
         <Class IRI="#Equipment"/>
         <Class IRI="#Material"/>
         <Class IRI="#Robot"/>
@@ -756,30 +611,6 @@
         <Class IRI="#Sensor"/>
         <Class IRI="#Tool"/>
     </DisjointClasses>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-        <ObjectProperty IRI="#composedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-        <ObjectProperty IRI="#composedBy"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#brickPartOf"/>
-        <ObjectProperty IRI="#isPartOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#mortarPartOf"/>
-        <ObjectProperty IRI="#isPartOf"/>
-    </SubObjectPropertyOf>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-        <ObjectProperty IRI="#brickPartOf"/>
-    </InverseObjectProperties>
-    <InverseObjectProperties>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-        <ObjectProperty IRI="#mortarPartOf"/>
-    </InverseObjectProperties>
     <InverseObjectProperties>
         <ObjectProperty IRI="#buildsWall"/>
         <ObjectProperty IRI="#isBuiltBy"/>
@@ -800,15 +631,6 @@
         <ObjectProperty IRI="#isAttachedTo"/>
         <ObjectProperty IRI="#isEndowedWith"/>
     </InverseObjectProperties>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#brickPartOf"/>
-    </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
     </AsymmetricObjectProperty>
@@ -837,20 +659,8 @@
         <ObjectProperty IRI="#isPartOf"/>
     </AsymmetricObjectProperty>
     <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#mortarPartOf"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
         <ObjectProperty IRI="#requiresMortar"/>
     </AsymmetricObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#brickPartOf"/>
-    </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#buildsWall"/>
     </IrreflexiveObjectProperty>
@@ -879,23 +689,8 @@
         <ObjectProperty IRI="#isPartOf"/>
     </IrreflexiveObjectProperty>
     <IrreflexiveObjectProperty>
-        <ObjectProperty IRI="#mortarPartOf"/>
-    </IrreflexiveObjectProperty>
-    <IrreflexiveObjectProperty>
         <ObjectProperty IRI="#requiresMortar"/>
     </IrreflexiveObjectProperty>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-        <Class IRI="#Wall"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-        <Class IRI="#Wall"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#brickPartOf"/>
-        <Class IRI="#Brick"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#buildsWall"/>
         <Class IRI="#Robot"/>
@@ -930,28 +725,12 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPartOf"/>
-        <Class IRI="#Material"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#mortarPartOf"/>
-        <Class IRI="#Mortar"/>
+        <Class IRI="#Brick"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#requiresMortar"/>
         <Class IRI="#Brick"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#BrickComposedBy"/>
-        <Class IRI="#Brick"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#MortarComposedBy"/>
-        <Class IRI="#Mortar"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#brickPartOf"/>
-        <Class IRI="#Wall"/>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#buildsWall"/>
         <Class IRI="#Wall"/>
@@ -962,7 +741,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#composedBy"/>
-        <Class IRI="#Material"/>
+        <Class IRI="#Brick"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#detectsObject"/>
@@ -986,10 +765,6 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isPartOf"/>
-        <Class IRI="#Wall"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#mortarPartOf"/>
         <Class IRI="#Wall"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
