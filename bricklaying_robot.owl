@@ -372,10 +372,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FireWall"/>
-        <ObjectSomeValuesFrom>
+        <ObjectAllValuesFrom>
             <ObjectProperty IRI="#composedBy"/>
             <Class IRI="#FireBrick"/>
-        </ObjectSomeValuesFrom>
+        </ObjectAllValuesFrom>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#FixedBaseRobot"/>
@@ -633,6 +633,12 @@
         <Class IRI="#Mortar"/>
     </DisjointClasses>
     <DisjointClasses>
+        <Class IRI="#BrickGripper"/>
+        <Class IRI="#MortarGun"/>
+        <Class IRI="#RailTrack"/>
+        <Class IRI="#Trowel"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#BurntClayBrick"/>
         <Class IRI="#ConcreteBrick"/>
         <Class IRI="#FacingBrick"/>
@@ -648,6 +654,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#CavityWall"/>
+        <Class IRI="#FireWall"/>
         <Class IRI="#LoadBearingWall"/>
         <Class IRI="#PartitionWall"/>
     </DisjointClasses>
